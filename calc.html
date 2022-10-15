@@ -5,6 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
+    <script>
+        function pressbutton(btnvalue){
+            let caltext=document.querySelector(".screen").value + btnvalue + "";
+            document.querySelector(".screen").value = caltext;
+        }
+
+        function calculate(){
+            let caltext=document.querySelector(".screen").value ;
+            document.querySelector(".screen").value = eval(caltext);
+        }
+    </script>
     <style>
          .container{
             background-color: rgb(131, 127, 127);
@@ -12,6 +23,7 @@
             width:350px;
             border-radius: 20px;
             border:2px solid rgb(79, 73, 73);
+            margin: auto;
          }
          .row{
             display:flex;
@@ -60,39 +72,41 @@
          .l{
             margin-bottom: 30px;
          }
+
     </style>
 </head>
 <body>
+
     <div class="container">
         <div class="input">
             <span>PRANALI</span>
             <input type="text" class="screen">
         </div>
         <div class="row">
-            <div class="btn">7</div>
-            <div class="btn">8</div>
-            <div class="btn">9</div>
-            <div class="btn p">/</div>
+            <div class="btn" onclick="pressbutton(7)">7</div>
+            <div class="btn" onclick="pressbutton(8)">8</div>
+            <div class="btn" onclick="pressbutton(9)">9</div>
+            <div class="btn p" onclick="pressbutton('/')">/</div>
         </div>
         <div class="row">
-            <div class="btn">4</div>
-            <div class="btn">5</div>
-            <div class="btn">6</div>
-            <div class="btn p">x</div>
+            <div class="btn" onclick="pressbutton(4)">4</div>
+            <div class="btn" onclick="pressbutton(5)">5</div>
+            <div class="btn" onclick="pressbutton(6)">6</div>
+            <div class="btn p" onclick="pressbutton('*')">x</div>
         </div>
         <div class="row">
-            <div class="btn">1</div>
-            <div class="btn">2</div>
-            <div class="btn">3</div>
-            <div class="btn p">-</div>
+            <div class="btn" onclick="pressbutton(1)">1</div>
+            <div class="btn" onclick="pressbutton(2)">2</div>
+            <div class="btn" onclick="pressbutton(3)">3</div>
+            <div class="btn p" onclick="pressbutton('-')">-</div>
         </div>
         <div class="row l">
-            <div class="btn">0</div>
-            <div class="btn p">.</div>
-            <div class="btn p">+</div>
-            <div class="btn p e">=</div>
+            <div class="btn" onclick="pressbutton(0)">0</div>
+            <div class="btn p" onclick="pressbutton('.')">.</div>
+            <div class="btn p" onclick="pressbutton('+')">+</div>
+            <div class="btn p e" onclick="calculate()">=</div>
         </div>
     </div>
-    
+ 
 </body>
 </html>
